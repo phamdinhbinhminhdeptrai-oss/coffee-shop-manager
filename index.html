@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Gà Rán UFC, Giao Hàng Tận Nơi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            🍗 UFC
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm đồ ăn...">
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-actions">
+            <div class="auth-buttons" id="authSection"></div>
+            <button id="cartBtn" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span id="cartCount"
+                    class="cart-count">0</span></button>
+            <button id="menuBtn" class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <div id="navMenu" class="nav-menu">
+                <ul id="navMenuList"></ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://static.kfcvietnam.com.vn/images/content/home/carousel/lg/Deal99k.webp?v=4Y6aKg"
+                    alt="a">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/Gemini_Generated_Image_g04l5ug04l5ug04l.png" alt="a">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/Gemini_Generated_Image_ds3wbzds3wbzds3w.png" alt="a">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <main class="container">
+        <section class="categories-section" style="margin-bottom: 60px;">
+            <h2 style="margin-top: 30px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zhPSj4cX8G6LL0XHEW8lX9DwV3dg&s=10"
+                    width="90" height="80" style="vertical-align: middle;">
+                Danh Mục Món Ăn
+            </h2>
+            <div id="categoryList" class="pos__grid"></div>
+        </section>
+
+        <section class="suggest-section" style="margin-bottom: 60px;">
+            <h2 style="margin-top: 30px;">
+                <i class="fa-solid fa-star"></i>
+                Có Thể Bạn Sẽ Thích Món Này
+            </h2>
+            <div class="suggest-carousel">
+                <button class="suggest-nav suggest-nav--prev" id="suggestPrev" type="button">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="suggest-track" id="suggestTrack"></div>
+                <button class="suggest-nav suggest-nav--next" id="suggestNext" type="button">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="comments-section">
+            <h2><i class="fa-solid fa-comments"></i> Đánh Giá Từ Khách Hàng</h2>
+            <div class="comment-form-container">
+                <form id="commentForm">
+                    <div class="rating-select">
+                        <select id="ratingInput">
+                            <option value="5">⭐⭐⭐⭐⭐ (Tuyệt vời)</option>
+                            <option value="4">⭐⭐⭐⭐ (Rất tốt)</option>
+                            <option value="3">⭐⭐⭐ (Bình thường)</option>
+                            <option value="2">⭐⭐ (Kém)</option>
+                            <option value="1">⭐ (Tệ)</option>
+                        </select>
+                    </div>
+                    <textarea id="commentInput" placeholder="Nhập bình luận của bạn..." required></textarea>
+                    <button type="submit" class="btn btn-primary">Gửi Đánh Giá</button>
+                </form>
+            </div>
+            <div class="comments-list" id="commentsList"></div>
+        </section>
+    </main>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeRegister">&times;</span>
+            <h2>Đăng Ký</h2>
+            <form id="registerForm">
+                <input type="text" id="regUsername" placeholder="Tên đăng nhập" required>
+                <input type="password" id="regPassword" placeholder="Mật khẩu" required>
+                <button type="submit" class="btn btn-primary">Tạo tài khoản</button>
+            </form>
+            <p class="form-switch">Đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập ngay</a></p>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeLogin">&times;</span>
+            <h2>Đăng Nhập</h2>
+            <form id="loginForm">
+                <input type="text" id="logUsername" placeholder="Tên đăng nhập" required>
+                <input type="password" id="logPassword" placeholder="Mật khẩu" required>
+                <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            </form>
+            <p class="form-switch">Chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký ngay</a></p>
+        </div>
+    </div>
+    <img src="https://static.kfcvietnam.com.vn/images/content/home/mobileappbanner/lg/banner.jpg?v=gMXn54">
+
+    <footer class="footer-custom">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-col footer-col-address">
+                    <div class="footer-title">Danh Mục Món Ăn</div>
+                    <ul class="footer-links">
+                        <li><a href="./pages/uu-dai.html">Ưu Đãi</a></li>
+                        <li><a href="./pages/dong-gia-sh.html">Đồng Giá Siêu Hời</a></li>
+                        <li><a href="./pages/mon-moi.html">Món Mới</a></li>
+                        <li><a href="./pages/cb-1-nguoi.html">Combo 1 Người</a></li>
+                        <li><a href="./pages/cb-nhom.html">Combo Nhóm</a></li>
+                        <li><a href="./pages/ga-ran-quay.html">Gà Rán - Gà Quay</a></li>
+                        <li><a href="./pages/burger-com-my.html">Burger - Cơm - Mì Ý</a></li>
+                        <li><a href="./pages/an-vat.html">Thức Ăn Nhẹ</a></li>
+                        <li><a href="./pages/thuc-uong.html">Thức Uống &amp; Tráng Miệng</a></li>
+                        <li><a href="./pages/bang-di-ung.html">Bảng Thành Phần Dị Ứng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">Về UFC</div>
+                    <ul class="footer-links">
+                        <li><a href="./pages/cau-chuyen.html">Câu Chuyện Của Chúng Tôi</a></li>
+                        <li><a href="./pages/khuyen-mai.html">Tin Khuyến Mãi</a></li>
+                        <li><a href="./pages/tin-tuc.html">Tin tức UFC</a></li>
+                        <li><a href="./pages/tuyen-dung.html">Tuyển dụng</a></li>
+                        <li><a href="./pages/dat-tiec.html">Đặt tiệc Sinh nhật</a></li>
+                        <li><a href="./pages/don-lon.html">Đơn Lớn Giá Hời</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">Liên Hệ UFC</div>
+                    <ul class="footer-links">
+                        <li><a href="./pages/theo-doi-don.html">Theo Dõi Đơn Hàng</a></li>
+                        <li><a href="./pages/he-thong.html">Hệ Thống Nhà Hàng</a></li>
+                        <li><a href="./pages/lien-he.html">Liên Hệ UFC</a></li>
+                        <li><a href="./pages/khuyen-mai.html">Tin Khuyến Mãi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">Chính Sách</div>
+                    <ul class="footer-links">
+                        <li><a href="./pages/cs-hoat-dong.html">Chính Sách Hoạt Động</a></li>
+                        <li><a href="./pages/cs-quy-dinh.html">Chính Sách Và Quy Định</a></li>
+                        <li><a href="./pages/cs-bao-mat.html">Chính Sách Bảo Mật</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-title">Chứng Nhận</div>
+                    <a href="https://online.gov.vn/nen-tang/171a2cdb-f8ce-4f5c-9328-ad7e92bbf503" target="_blank"
+                        rel="noopener noreferrer">
+                        <img class="bct-img"
+                            src="https://phuclong.com.vn/_next/static/images/logoSaleNoti-f3d3b02c52d6144889ea6a5cbc6f0f19.png"
+                            alt="Đã thông báo Bộ Công Thương">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">Copyright © 2026 UFC Vietnam</div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/KFCVietnam" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/kfc_vietnam/"target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@KFCVietnam2011"target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://x.com/KFCVietNam"target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+</body> 
+
+</html>

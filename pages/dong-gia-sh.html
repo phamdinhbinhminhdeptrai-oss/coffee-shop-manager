@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng Giá Siêu Hời - UFC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #ffb347 0%, #ff6b81 100%);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .page-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.4rem;
+            margin: 0 0 12px;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            margin: 0;
+            font-size: 1.05rem;
+            opacity: 0.92;
+        }
+
+       .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 70px;
+        }
+
+        .page-content h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 14px;
+            margin-bottom: 24px;
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .promo-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+        }
+
+        .promo-card__img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .promo-card__body {
+            padding: 16px 18px;
+        }
+
+        .promo-card__body h3 {
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+            color: var(--dark-color);
+        }
+
+        .promo-card__body p {
+            margin: 0 0 12px;
+            font-size: 0.92rem;
+            color: var(--muted-dark);
+            line-height: 1.55;
+        }
+
+        .promo-price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .promo-price .old {
+            text-decoration: line-through;
+            color: #9aa0a6;
+            font-size: 0.9rem;
+        }
+
+        .promo-price .new {
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .btn-promo {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 22px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .btn-promo:hover {
+            background: var(--primary-dark);
+        }
+
+        .page-content p {
+            color: var(--muted-dark);
+            line-height: 1.7;
+            font-size: 0.98rem;
+        }
+
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo">🍗 UFC</a>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm đồ ăn...">
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-actions">
+            <div class="auth-buttons" id="authSection"></div>
+            <button id="cartBtn" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span id="cartCount" class="cart-count">0</span></button>
+            <button id="menuBtn" class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <div id="navMenu" class="nav-menu">
+                <ul id="navMenuList"></ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1><i class="fa-solid fa-tags"></i> Đồng Giá Siêu Hời</h1>
+        <p>Một mức giá — nhiều lựa chọn hấp dẫn</p>
+    </section>
+
+    <main class="page-content">
+        <h2>Ưu Đãi Nổi Bật</h2>
+        <div class="promo-grid">
+            <article class="promo-card">
+                <img class="promo-card__img" src="https://static.kfcvietnam.com.vn/images/items/lg/YAY-129K.jpg?v=3r2z93" alt="Combo gà rán">
+                <div class="promo-card__body">
+                    <h3>Deal 129K Yay!</h3>
+                    <p>3 Miếng Gà Rán + 2 Bánh Trứng</p>
+                    <div class="promo-price"><span class="old">129.000đ</span><span class="new">127.000đ</span></div>
+                    <button class="btn-promo">Đặt ngay</button>
+                </div>
+            </article>
+            <article class="promo-card">
+                <img class="promo-card__img" src="https://static.kfcvietnam.com.vn/images/items/lg/YASS-129K.jpg?v=3r2z93" alt="Mua 1 tặng 1">
+                <div class="promo-card__body">
+                    <h3>Deal 129K Yass!</h3>
+                    <p>3 Miếng Gà Rán + 1 Gà Viên Popcorn (Vừa)</p>
+                    <div class="promo-price"><span class="new">129.000đ</span></div>
+                    <button class="btn-promo">Đặt ngay</button>
+                </div>
+            </article>
+            <article class="promo-card">
+                <img class="promo-card__img" src="https://static.kfcvietnam.com.vn/images/items/lg/YUMMY-149K.jpg?v=3r2z93" alt="Giảm giá nhóm">
+                <div class="promo-card__body">
+                    <h3>Deal 149K Yeah</h3>
+                    <p>3 Burger Tôm + 3 Ly Pepsi (Tiêu chuẩn)</p>
+                    <div class="promo-price"><span class="old">174.000đ</span><span class="new">149.000đ</span></div>
+                    <button class="btn-promo">Đặt ngay</button>
+                </div>
+            </article>
+            <article class="promo-card">
+                <img class="promo-card__img" src="https://static.kfcvietnam.com.vn/images/items/lg/YEAH-149K.jpg?v=3r2z93" alt="Miễn phí giao hàng">
+                <div class="promo-card__body">
+                    <h3>Deal 149K Yolo</h3>
+                    <p>3 Miếng Gà Rán + 2 Mì Ý Xúc Xích Gà</p>
+                    <div class="promo-price"><span class="new">149.000đ</span></div>
+                    <button class="btn-promo">Đặt ngay</button>
+                </div>
+            </article>
+            <article class="promo-card">
+                <img class="promo-card__img" src="https://static.kfcvietnam.com.vn/images/items/lg/YOLO-149K.jpg?v=3r2z93" alt="Giờ vàng đồng giá">
+                <div class="promo-card__body">
+                    <h3>Deal 149K Yummy</h3>
+                    <p>2 Miếng Gà Rán + 2 Burger Gà Yo + 2 Ly Pepsi (Tiêu Chuẩn) </p>
+                    <div class="promo-price"><span class="old">174.000đ</span><span class="new">149.000đ</span></div>
+                    <button class="btn-promo">Đặt ngay</button>
+                </div>
+            </article>
+        </div>
+    </main>
+        <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeRegister">&times;</span>
+            <h2>Đăng Ký</h2>
+            <form id="registerForm">
+                <input type="text" id="regUsername" placeholder="Tên đăng nhập" required>
+                <input type="password" id="regPassword" placeholder="Mật khẩu" required>
+                <button type="submit" class="btn btn-primary">Tạo tài khoản</button>
+            </form>
+            <p class="form-switch">Đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập ngay</a></p>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeLogin">&times;</span>
+            <h2>Đăng Nhập</h2>
+            <form id="loginForm">
+                <input type="text" id="logUsername" placeholder="Tên đăng nhập" required>
+                <input type="password" id="logPassword" placeholder="Mật khẩu" required>
+                <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            </form>
+            <p class="form-switch">Chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký ngay</a></p>
+        </div>
+    </div>
+
+    <footer class="footer-custom">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <div class="copyright">Copyright © 2026 UFC Vietnam</div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>

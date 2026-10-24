@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Món Mới - UFC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #e8413f 0%, #ffb347 100%);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .page-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.4rem;
+            margin: 0 0 12px;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            margin: 0;
+            font-size: 1.05rem;
+            opacity: 0.92;
+        }
+
+        .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 70px;
+        }
+
+        .page-content h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 14px;
+            margin-bottom: 24px;
+        }
+
+        .new-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .new-card {
+            display: flex;
+            gap: 18px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: var(--shadow);
+            align-items: center;
+        }
+
+        .new-card img {
+            width: 130px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .new-card h3 {
+            margin: 0 0 8px;
+            color: var(--dark-color);
+            font-size: 1.15rem;
+        }
+
+        .new-card p {
+            margin: 0 0 10px;
+            color: var(--muted-dark);
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        .badge-new {
+            background: var(--primary-color);
+            color: #fff;
+            font-size: 0.72rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .new-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .new-card img {
+                width: 100%;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo">🍗 UFC</a>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm đồ ăn...">
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-actions">
+            <div class="auth-buttons" id="authSection"></div>
+            <button id="cartBtn" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span id="cartCount" class="cart-count">0</span></button>
+            <button id="menuBtn" class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <div id="navMenu" class="nav-menu">
+                <ul id="navMenuList"></ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1><i class="fa-solid fa-star"></i> Món Mới</h1>
+        <p>Khám phá những hương vị vừa cập bến tại UFC</p>
+    </section>
+
+    <main class="page-content">
+        <h2>Vừa Lên Kệ</h2>
+        <div class="new-list">
+            <article class="new-card">
+                <img src="../img/image.png" alt="Gà sốt cay">
+                <div>
+                    <span class="badge-new">MỚI</span>
+                    <h3>Gà Sốt Cay Hàn Quốc</h3>
+                    <p>Miếng gà giòn tan phủ lớp sốt cay đặc trưng, kèm mè rang thơm lừng.</p>
+                </div>
+            </article>
+            <article class="new-card">
+                <img src="../img/image.png" alt="Burger bò phô mai">
+                <div>
+                    <span class="badge-new">MỚI</span>
+                    <h3>Burger Bò Phô Mai</h3>
+                    <p>Nhân bò nướng mềm mọng, phô mai tan chảy quyện cùng sốt đặc biệt của UFC.</p>
+                </div>
+            </article>
+            <article class="new-card">
+                <img src="../img/image.png" alt="Trà trái cây">
+                <div>
+                    <span class="badge-new">MỚI</span>
+                    <h3>Trà Trái Cây Nhiệt Đới</h3>
+                    <p>Vị trà thanh mát kết hợp đào, cam và chanh dây — giải khát cho ngày hè.</p>
+                </div>
+            </article>
+            <article class="new-card">
+                <img src="../img/image.png" alt="Gà phô mai">
+                <div>
+                    <span class="badge-new">MỚI</span>
+                    <h3>Gà Phô Mai Lắc</h3>
+                    <p>Gà rán giòn lắc bột phô mai béo ngậy, thơm nồng khó cưỡng.</p>
+                </div>
+            </article>
+            <article class="new-card">
+                <img src="../img/image.png" alt="Mì Ý hải sản">
+                <div>
+                    <span class="badge-new">MỚI</span>
+                    <h3>Mì Ý Hải Sản</h3>
+                    <p>Tôm, mực tươi hòa quyện sốt cà chua đặc trưng của đầu bếp UFC.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+        <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeRegister">&times;</span>
+            <h2>Đăng Ký</h2>
+            <form id="registerForm">
+                <input type="text" id="regUsername" placeholder="Tên đăng nhập" required>
+                <input type="password" id="regPassword" placeholder="Mật khẩu" required>
+                <button type="submit" class="btn btn-primary">Tạo tài khoản</button>
+            </form>
+            <p class="form-switch">Đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập ngay</a></p>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeLogin">&times;</span>
+            <h2>Đăng Nhập</h2>
+            <form id="loginForm">
+                <input type="text" id="logUsername" placeholder="Tên đăng nhập" required>
+                <input type="password" id="logPassword" placeholder="Mật khẩu" required>
+                <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            </form>
+            <p class="form-switch">Chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký ngay</a></p>
+        </div>
+    </div>
+
+    <footer class="footer-custom">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <div class="copyright">Copyright © 2026 UFC Vietnam</div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>

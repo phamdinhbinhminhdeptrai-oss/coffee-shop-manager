@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo 1 Người - UFC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #e8413f 0%, #ff6b81 100%);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .page-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.4rem;
+            margin: 0 0 12px;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            margin: 0;
+            font-size: 1.05rem;
+            opacity: 0.92;
+        }
+
+        .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 70px;
+        }
+
+        .page-content h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 14px;
+            margin-bottom: 24px;
+        }
+
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .combo-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .combo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .combo-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .combo-card__body {
+            padding: 18px;
+        }
+
+        .combo-card__body h3 {
+            margin: 0 0 10px;
+            color: var(--dark-color);
+            font-size: 1.2rem;
+        }
+
+        .combo-card__body ul {
+            margin: 0 0 14px;
+            padding-left: 20px;
+            color: var(--muted-dark);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .combo-card__body .price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+        }
+
+        .btn-combo {
+            display: block;
+            width: 100%;
+            margin-top: 14px;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .btn-combo:hover {
+            background: var(--primary-dark);
+        }
+
+        .deal-note {
+            margin-top: 28px;
+            font-size: 0.92rem;
+            color: var(--muted-dark);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo">🍗 UFC</a>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm đồ ăn...">
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-actions">
+            <div class="auth-buttons" id="authSection"></div>
+            <button id="cartBtn" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span id="cartCount" class="cart-count">0</span></button>
+            <button id="menuBtn" class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <div id="navMenu" class="nav-menu">
+                <ul id="navMenuList"></ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1><i class="fa-solid fa-user"></i> Combo 1 Người</h1>
+        <p>Bữa ăn trọn vị dành riêng cho bạn</p>
+    </section>
+
+    <main class="page-content">
+        <h2>Chọn Combo Của Bạn</h2>
+        <div class="combo-grid">
+            <article class="combo-card">
+                <img src="../img/image.png" alt="Combo gà giòn">
+                <div class="combo-card__body">
+                    <h3>Combo Gà Giòn</h3>
+                    <ul>
+                        <li>1 miếng gà rán</li>
+                        <li>1 khoai tây chiên</li>
+                        <li>1 nước ngọt</li>
+                    </ul>
+                    <span class="price">89.000đ</span>
+                    <button class="btn-combo">Thêm vào giỏ</button>
+                </div>
+            </article>
+            <article class="combo-card">
+                <img src="../img/image.png" alt="Combo burger">
+                <div class="combo-card__body">
+                    <h3>Combo Burger</h3>
+                    <ul>
+                        <li>1 burger gà</li>
+                        <li>1 khoai tây chiên</li>
+                        <li>1 nước ngọt</li>
+                    </ul>
+                    <span class="price">79.000đ</span>
+                    <button class="btn-combo">Thêm vào giỏ</button>
+                </div>
+            </article>
+            <article class="combo-card">
+                <img src="../img/image.png" alt="Combo cơm gà">
+                <div class="combo-card__body">
+                    <h3>Combo Cơm Gà</h3>
+                    <ul>
+                        <li>1 phần cơm gà</li>
+                        <li>1 súp rong biển</li>
+                        <li>1 nước ngọt</li>
+                    </ul>
+                    <span class="price">85.000đ</span>
+                    <button class="btn-combo">Thêm vào giỏ</button>
+                </div>
+            </article>
+            <article class="combo-card">
+                <img src="../img/image.png" alt="Combo mì Ý">
+                <div class="combo-card__body">
+                    <h3>Combo Mì Ý</h3>
+                    <ul>
+                        <li>1 mì Ý sốt bò băm</li>
+                        <li>1 bánh tart trứng</li>
+                        <li>1 nước ngọt</li>
+                    </ul>
+                    <span class="price">95.000đ</span>
+                    <button class="btn-combo">Thêm vào giỏ</button>
+                </div>
+            </article>
+            <article class="combo-card">
+                <img src="../img/image.png" alt="Combo gà sốt cay">
+                <div class="combo-card__body">
+                    <h3>Combo Gà Sốt Cay</h3>
+                    <ul>
+                        <li>2 miếng gà sốt cay</li>
+                        <li>1 khoai tây chiên</li>
+                        <li>1 trà đào cam sả</li>
+                    </ul>
+                    <span class="price">109.000đ</span>
+                    <button class="btn-combo">Thêm vào giỏ</button>
+                </div>
+            </article>
+        </div>
+        <p class="deal-note">Combo 1 người áp dụng cho khách dùng tại nhà hàng và đặt mang đi. Giá đã bao gồm thuế VAT.</p>
+    </main>
+
+    <footer class="footer-custom">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <div class="copyright">Copyright © 2026 UFC Vietnam</div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt cà phê — Coffee House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/shop.css" />
+  </head>
+  <body>
+    <div class="shop">
+      <header class="shop-header">
+        <a href="./shop.html" class="shop-logo">
+          <span class="shop-logo__icon" aria-hidden="true">☕</span>
+          <span class="shop-logo__text">Coffee House</span>
+        </a>
+        <a href="./index.html" class="shop-admin">Quản lý</a>
+      </header>
+
+      <section class="shop-hero" aria-labelledby="hero-title">
+        <p class="shop-hero__eyebrow">Pha tươi mỗi ngày</p>
+        <h1 id="hero-title" class="shop-hero__title">Cà phê &amp; trà cho ngày của bạn</h1>
+        <p class="shop-hero__lead">
+          Chọn món, đặt nhanh — đơn của bạn sẽ hiện trên hệ thống quầy để pha ngay.
+        </p>
+      </section>
+
+      <div class="shop-layout">
+        <div class="shop-main">
+          <div class="shop-toolbar">
+            <h2 class="shop-section-title">Thực đơn</h2>
+            <div id="filter-chips" class="chips" role="tablist" aria-label="Lọc theo nhóm"></div>
+          </div>
+          <div id="product-grid" class="product-grid" aria-live="polite"></div>
+          <p id="shop-empty" class="shop-empty" hidden>Hiện chưa có món phục vụ. Quay lại sau nhé.</p>
+        </div>
+
+        <aside class="shop-cart" id="cart-aside" aria-label="Giỏ hàng">
+          <div class="shop-cart__inner">
+            <h2 class="shop-cart__title">Giỏ hàng</h2>
+            <ul id="cart-lines" class="cart-lines"></ul>
+            <div class="cart-summary">
+              <span>Tạm tính</span>
+              <strong id="cart-sum">0&nbsp;₫</strong>
+            </div>
+            <button type="button" class="btn-checkout" id="btn-open-checkout" disabled>Thanh toán</button>
+          </div>
+        </aside>
+      </div>
+
+      <button type="button" class="cart-fab" id="cart-fab" aria-expanded="false" aria-controls="cart-drawer">
+        <span class="cart-fab__label">Giỏ</span>
+        <span class="cart-fab__count" id="fab-count">0</span>
+        <span class="cart-fab__sum" id="fab-sum">0&nbsp;₫</span>
+      </button>
+
+      <div class="cart-drawer" id="cart-drawer" hidden>
+        <div class="cart-drawer__backdrop" id="cart-backdrop"></div>
+        <div class="cart-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+          <div class="cart-drawer__head">
+            <h2 id="drawer-title">Giỏ hàng</h2>
+            <button type="button" class="cart-drawer__close" id="cart-close" aria-label="Đóng">×</button>
+          </div>
+          <ul id="cart-lines-mobile" class="cart-lines"></ul>
+          <div class="cart-summary">
+            <span>Tạm tính</span>
+            <strong id="cart-sum-mobile">0&nbsp;₫</strong>
+          </div>
+          <button type="button" class="btn-checkout" id="btn-open-checkout-m" disabled>Thanh toán</button>
+        </div>
+      </div>
+
+      <div class="modal" id="checkout-modal" hidden>
+        <div class="modal__backdrop" id="modal-back"></div>
+        <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+          <h2 id="modal-title" class="modal__title">Thông tin đặt hàng</h2>
+          <form id="checkout-form" class="checkout-form">
+            <label>
+              Tên của bạn
+              <input name="name" type="text" required autocomplete="name" placeholder="VD: Lan" />
+            </label>
+            <label>
+              Số điện thoại
+              <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Để quầy liên hệ khi cần" />
+            </label>
+            <label>
+              Ghi chú
+              <textarea name="notes" rows="2" placeholder="Ít đường, mang đi, bàn số..."></textarea>
+            </label>
+            <div class="modal__actions">
+              <button type="button" class="btn-secondary" id="modal-cancel">Hủy</button>
+              <button type="submit" class="btn-primary">Gửi đơn</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal" id="success-modal" hidden>
+        <div class="modal__backdrop" id="success-back"></div>
+        <div class="modal__box modal__box--success">
+          <p class="success-icon" aria-hidden="true">✓</p>
+          <h2 class="modal__title">Đã nhận đơn!</h2>
+          <p class="success-text">Cảm ơn bạn. Quầy sẽ pha và gọi tên khi xong.</p>
+          <button type="button" class="btn-primary btn-block" id="success-ok">Tiếp tục mua</button>
+        </div>
+      </div>
+
+      <div id="shop-toast" class="shop-toast" role="status" aria-live="polite" hidden></div>
+    </div>
+
+    <script type="module" src="./js/shop.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H�? Th�'ng Nhà Hàng - UFC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo">🍗 UFC</a>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm đồ ăn...">
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-actions">
+            <div class="auth-buttons" id="authSection"></div>
+            <button id="cartBtn" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span id="cartCount" class="cart-count">0</span></button>
+            <button id="menuBtn" class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <div id="navMenu" class="nav-menu">
+                <ul id="navMenuList"></ul>
+            </div>
+        </div>
+    </header>
+
+        <main class="container">
+        <h2 style="margin-top: 30px;"><i class="fa-solid fa-store"></i> Hệ Thống Nhà Hàng</h2>
+        <p>Hơn 100 nhà hàng UFC trên toàn quốc, sẵn sàng phục vụ bạn.</p>
+
+        <h3 style="margin-top: 28px;">Khu Vực Miền Nam</h3>
+        <ul>
+            <li>UFC Nguyễn Văn Cừ - TP. Hồ Chí Minh.</li>
+            <li>UFC Lê Văn Việt - TP. Hồ Chí Minh.</li>
+            <li>UFC Cần Thơ - Cần Thơ.</li>
+        </ul>
+
+        <h3 style="margin-top: 28px;">Khu Vực Miền Bắc</h3>
+        <ul>
+            <li>UFC Hồ Tây - Hà Nội.</li>
+            <li>UFC Cầu Giấy - Hà Nội.</li>
+            <li>UFC Hải Phòng - Hải Phòng.</li>
+        </ul>
+    </main>
+
+    <footer class="footer-custom">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <div class="copyright">Copyright © 2026 UFC Vietnam</div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>

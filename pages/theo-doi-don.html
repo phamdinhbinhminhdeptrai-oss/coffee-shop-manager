@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo Dõi Đơn Hàng - UFC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo">🍗 UFC</a>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm đồ ăn...">
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-actions">
+            <div class="auth-buttons" id="authSection"></div>
+            <button id="cartBtn" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span id="cartCount" class="cart-count">0</span></button>
+            <button id="menuBtn" class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <div id="navMenu" class="nav-menu">
+                <ul id="navMenuList"></ul>
+            </div>
+        </div>
+    </header>
+
+        <main class="container">
+        <h2 style="margin-top: 30px;"><i class="fa-solid fa-truck-fast"></i> Theo Dõi Đơn Hàng</h2>
+        <p>Nhập mã đơn hàng để kiểm tra trạng thái đơn của bạn.</p>
+
+        <h3 style="margin-top: 28px;">Trạng Thái Đơn Hàng</h3>
+        <ul>
+            <li>Đã tiếp nhận - Nhà hàng đã ghi nhận đơn.</li>
+            <li>Đang chuẩn bị - Món ăn đang được chế biến.</li>
+            <li>Đang giao - Tài xế đang trên đường tới bạn.</li>
+            <li>Hoàn tất - Đơn hàng đã giao thành công.</li>
+        </ul>
+    </main>
+
+    <footer class="footer-custom">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <div class="copyright">Copyright © 2026 UFC Vietnam</div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>
